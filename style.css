@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg:         #c8dff0;
+  --bg-dark:    #8FB6D8;
+  --card:       rgba(255, 255, 255, 0.55);
+  --card-solid: #ffffff;
+  --accent:     #2e6da4;
+  --accent2:    #e8a44a;
+  --text:       #1c2e3d;
+  --text-muted: #4a6278;
+  --shadow:     0 8px 32px rgba(46, 109, 164, 0.15);
+  --radius:     16px;
+  --font-head:  'Playfair Display', Georgia, serif;
+  --font-body:  'Nunito', Verdana, sans-serif;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg) !important;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(232, 164, 74, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(46, 109, 164, 0.18) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232e6da4' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-family: var(--font-body);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Override legacy font tag */
+font {
+  font-family: var(--font-body) !important;
+  color: var(--text) !important;
+}
+
+/* ── Page Wrapper ── */
+center {
+  display: block;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Headings ── */
+h1 {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  margin-top: 48px;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 12px rgba(46, 109, 164, 0.15);
+  animation: fadeDown 0.7s ease both;
+}
+
+h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  margin: 20px 0 12px;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+h3 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  border-left: 4px solid var(--accent2);
+  padding-left: 12px;
+}
+
+p {
+  line-height: 1.85;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+/* ── Horizontal Rule ── */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), var(--accent), transparent);
+  border-radius: 99px;
+  margin: 16px auto;
+  width: 50% !important;
+  opacity: 0.6;
+  animation: fadeIn 1s ease both;
+}
+
+/* ── Navigation Buttons ── */
+table[cellpadding="10"] {
+  margin: 16px auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  animation: fadeUp 0.6s 0.15s ease both;
+}
+
+table[cellpadding="10"] button,
+table[cellpadding="10"] a button {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--card-solid);
+  background: linear-gradient(135deg, var(--accent), #1a4f7a);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 22px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px rgba(46, 109, 164, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+table[cellpadding="10"] button:hover {
+  background: linear-gradient(135deg, var(--accent2), #c47f2a);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 22px rgba(232, 164, 74, 0.45);
+}
+
+table[cellpadding="10"] a {
+  text-decoration: none;
+}
+
+/* ── Profile Image (Home) ── */
+img[src="gambardiri.jpeg"],
+img[src*="gambardiri"] {
+  display: block;
+  margin: 20px auto;
+  width: 200px !important;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--card-solid);
+  box-shadow: 0 8px 30px rgba(46, 109, 164, 0.3), 0 0 0 8px rgba(46, 109, 164, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: popIn 0.7s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+img[src="gambardiri.jpeg"]:hover,
+img[src*="gambardiri"]:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 40px rgba(46, 109, 164, 0.45);
+}
+
+/* ── Welcome Text (Home) ── */
+center > p {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: var(--radius);
+  padding: 14px 28px;
+  margin: 6px auto;
+  max-width: 600px;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+/* ── Blog: Article Cards ── */
+table[width="700"] {
+  width: 100% !important;
+  max-width: 720px;
+  margin: 0 auto 24px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeUp 0.5s ease both;
+}
+
+table[width="700"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(46, 109, 164, 0.22);
+}
+
+table[width="700"] td {
+  padding: 28px 32px !important;
+  text-align: left !important;
+}
+
+/* ── Blog Images ── */
+table[width="700"] img {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin: 4px 6px 4px 0;
+  transition: transform 0.3s ease;
+}
+
+table[width="700"] img:hover {
+  transform: scale(1.03);
+}
+
+/* ── Blog Video ── */
+table[width="700"] video {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin: 4px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* ── Links ── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dotted var(--accent2);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+a:hover {
+  color: var(--accent2);
+  border-color: var(--accent2);
+}
+
+/* ── Contact Info ── */
+center > p:has(📧),
+center > p:has(📱),
+center > p:has(📍),
+center > p:has(📷) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Fallback for all contact-style paragraphs */
+body[bgcolor] center > p {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: var(--radius);
+  padding: 14px 28px;
+  margin: 8px auto;
+  max-width: 520px;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+body[bgcolor] center > p:hover {
+  transform: translateX(4px);
+  box-shadow: 0 10px 30px rgba(46, 109, 164, 0.2);
+}
+
+/* ── Gallery Images ── */
+center > img {
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  margin: 6px 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+center > img:hover {
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: 0 14px 36px rgba(46,109,164,0.3);
+}
+
+/* ── Gallery Captions (italic paragraphs) ── */
+center > p > i,
+center > p i {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+/* Gallery section label paragraphs */
+center > p:has(i) {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 6px 0 !important;
+  backdrop-filter: none !important;
+}
+
+/* ── Italic / Source text ── */
+i font,
+i {
+  font-size: 0.82rem !important;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Animations ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  center {
+    padding: 0 12px;
+  }
+
+  table[cellpadding="10"] button {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  table[width="700"] td {
+    padding: 18px 16px !important;
+  }
+
+  table[width="700"] img,
+  table[width="700"] video {
+    width: 100% !important;
+    margin: 6px 0;
+    display: block;
+  }
+
+  center > img {
+    width: 90% !important;
+    display: block;
+    margin: 8px auto !important;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-top: 28px;
+  }
+}
