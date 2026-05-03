@@ -483,10 +483,11 @@ a:hover {
 
   table[cellpadding="10"] button {
     width: auto;
-    min-width: 120px;
-    padding: 12px 16px;
-    font-size: 0.85rem;
-    border-radius: 18px;
+    min-width: 100px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-radius: 14px;
+    gap 6px;
 
     background: rgba(255,255,255,0.75);
     backdrop-filter: blur(14px);
