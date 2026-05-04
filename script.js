@@ -207,3 +207,13 @@
   }
 
 })();
+
+function pindah(halaman) {
+    const track = document.getElementById('track');
+    if (halaman === 2) {
+        track.classList.add('pindah');
+    } else {
+        track.classList.remove('pindah');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
