@@ -482,7 +482,6 @@ a:hover {
   }
 
   table[cellpadding="10"] button {
-    width: auto;
     min-width: 100px;
     padding: 8px 12px;
     font-size: 0.8rem;
@@ -522,3 +521,20 @@ a:hover {
   }
 
 }
+
+.slide-container { overflow: hidden; width: 100%; }
+.slide-track { display: flex; width: 200%; transition: transform 0.5s ease; }
+.slide-track.pindah { transform: translateX(-50%); }
+.slide-page { width: 50%; }
+
+.btn-tentang { background: #c0674a; color: white; border: none; border-radius: 50px; padding: 10px 24px; font-size: 0.88rem; font-weight: 600; cursor: pointer; margin-top: 10px; }
+.btn-tentang:hover { opacity: 0.85; }
+.btn-kembali { background: rgba(255,255,255,0.65); color: #1c2b3a; border: 1.5px solid rgba(255,255,255,0.85); border-radius: 50px; padding: 9px 22px; font-size: 0.85rem; font-weight: 600; cursor: pointer; margin-top: 10px; }
+.btn-kembali:hover { opacity: 0.85; }
+
+.about-card { background: rgba(255,255,255,0.55); border: 1.5px solid rgba(255,255,255,0.8); border-radius: 20px; padding: 28px 32px; max-width: 520px; margin: 16px auto; text-align: left; }
+.about-baris { display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+.about-baris:last-child { border-bottom: none; }
+.ikon { font-size: 1.2rem; flex-shrink: 0; }
+.label { font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #6b7f92; margin-bottom: 3px; }
+.nilai { font-size: 0.93rem; color: #1c2b3a; line-height: 1.6; }
